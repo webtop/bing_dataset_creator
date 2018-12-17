@@ -5,8 +5,8 @@ import argparse
 import os
 import cv2
 import requests
+import config
 
-API_KEY = "f294369e4ea14496aaa062cf2f324fc4"
 MAX_RESULTS = 250
 GROUP_SIZE = 50
 URL = "https://api.cognitive.microsoft.com/bing/v7.0/images/search"
@@ -20,7 +20,7 @@ def main():
     # maximum number of results for a given search and (2) the group size
     # for results (maximum of 50 per request)
 
-    headers = {"Ocp-Apim-Subscription-Key" : API_KEY}
+    headers = {"Ocp-Apim-Subscription-Key" : config.BING_API_KEY}
     params = {"q": args["query"], "offset": 0, "count": GROUP_SIZE}
 
     # make the search
