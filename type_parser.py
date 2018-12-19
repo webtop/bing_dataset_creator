@@ -18,10 +18,10 @@ def type_parser_main():
         print(msg.format(set_path))
         exit(1)
 
-    os.mkdir(set_path)
     input_file = "{}/{}".format(ITEM_TYPE_FOLDER, args['input'])
 
     if os.path.isfile(input_file):
+        os.mkdir(set_path)
         control_list = list(open(input_file, 'r'))
         for item in control_list:
             item = item.rstrip("\r\n").lower().replace(" ", "_")
@@ -44,6 +44,18 @@ def type_parser_main():
                 os.system(exec_string)
             except OSError as ex:
                 print("Failed to fetch images for {} due to {}".format(item, ex))
+
+        # Now we can remove all duplicate images
+        exec_string = "python deduper.py --folder {}".format(set_path)
+        try:
+            os.system(exec_string)
+        except OSError as ex:
+            print("Failed to dedupe images in folder {} due to {}".format(item_path, ex))
+
+        print("Done!")
+
+    else:
+        print("Input file {} not found".format(input_file))
 
 def get_args():
     """construct the argument parser and parse the arguments"""

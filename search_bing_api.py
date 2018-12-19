@@ -7,8 +7,8 @@ import cv2
 import requests
 import config
 
-MAX_RESULTS = 250
-GROUP_SIZE = 50
+MAX_RESULTS = 10
+GROUP_SIZE = 5
 URL = "https://api.cognitive.microsoft.com/bing/v7.0/images/search"
 
 def main():
