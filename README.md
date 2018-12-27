@@ -1,15 +1,16 @@
 # Dataset Creator
 Creates a dataset of images based of a list of item types (i.e. cats).
+
 Dataset can then be used in a Machine Learning training model
-The topic is stored in a file in the ./datasets/input_files folder and passed into the main script
-as a command like argument.
+
+The topic is stored in a file in the ./datasets/input_files folder and passed into the main script as a command line argument.
 
 ## Example
-python type_parser.py -n cat_breeds -i cat_breeds.txt
+*python type_parser.py -n cat_breeds -i cat_breeds.txt*
 
 where:
 -    -n is the name of the topic to do an image search on
--    -i is the name of the file with the list of subtopics (brreds for animals)
+-    -i is the name of the file with the list of subtopics (breeds for animals)
 
 ## Workflow
 - type_parser.py - is the runner which checks for errors and parses the command line args
