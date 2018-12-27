@@ -3,22 +3,18 @@
 # import the necessary packages
 import argparse
 import os
-import cv2
 import requests
+import cv2
 import config
 
-MAX_RESULTS = 10
-GROUP_SIZE = 5
+MAX_RESULTS = 250
+GROUP_SIZE = 50
 URL = "https://api.cognitive.microsoft.com/bing/v7.0/images/search"
 
 def main():
     """Just because PyLint says so"""
 
     args = get_args()
-
-    # set your Microsoft Cognitive Services API key along with (1) the
-    # maximum number of results for a given search and (2) the group size
-    # for results (maximum of 50 per request)
 
     headers = {"Ocp-Apim-Subscription-Key" : config.BING_API_KEY}
     params = {"q": args["query"], "offset": 0, "count": GROUP_SIZE}

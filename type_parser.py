@@ -10,11 +10,14 @@ ITEM_TYPE_FOLDER = "./datasets/input_files"
 IMAGE_FOLDER = "./datasets/images"
 
 def type_parser_main():
-    """Just because pylint says so"""
+    """
+        Takes args and first determine existence of projected folder structure,
+        then builds out folder structure for image download
+    """
     args = get_args()
     set_path = "{}/{}".format(IMAGE_FOLDER, args['name'].lower().replace(" ", "_"))
     if os.path.isdir(set_path):
-        msg = """Folder {} already exists in datasets. Please remove or specify a different name"""
+        msg = "Folder {} already exists in datasets. Please remove or specify a different name"
         print(msg.format(set_path))
         exit(1)
 
@@ -58,7 +61,9 @@ def type_parser_main():
         print("Input file {} not found".format(input_file))
 
 def get_args():
-    """construct the argument parser and parse the arguments"""
+    """
+        Construct the argument parser and parse the arguments
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument("-n", "--name", required=True, help="name of the image subject")
     parser.add_argument("-i", "--input", required=True, help="name of the input file")
