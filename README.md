@@ -1,4 +1,4 @@
-# Simple Machine Lanaguage Dataset Creator
+# Simple Machine Language Dataset Creator
 Creates a dataset of images based of a list of item types (i.e. cats).
 
 Dataset can then be used in a Machine Learning training model
