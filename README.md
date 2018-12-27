@@ -1,4 +1,4 @@
-# Dataset Creator
+# Simple Machine Lanaguage Dataset Creator
 Creates a dataset of images based of a list of item types (i.e. cats).
 
 Dataset can then be used in a Machine Learning training model
@@ -17,3 +17,6 @@ where:
 - search_bing_api.py - uses the Bing API service based on your key from config, to find and download images
 - deduper.py - removes any duplicate images it finds, based on hashing the file via OpenCV
 - mover.py - splits the dataset into the training and testing folders
+
+## To Do
+- [ ] Convert move.php to Python
