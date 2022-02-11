@@ -1,5 +1,5 @@
 """
-    This file is responsible for reading ina  list of items in the input file, creating the
+    This file is responsible for reading in a list of items in the input file, creating the
     necessary folder structure, and then calling the Bing image API script to fetch
     and save the related images
 """
